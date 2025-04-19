@@ -144,7 +144,7 @@ builder.Services.AddScoped<IEmailSender, EmailSender>();
 | <div style="max-width:300px; margin:1em auto;"><img src="https://raw.githubusercontent.com/asde9875/Kevin_MVC/master/images/admin_order_list.png" alt="Order List" style="width:100%;"/></div> | <div style="max-width:300px; margin:1em auto;"><img src="https://raw.githubusercontent.com/asde9875/Kevin_MVC/master/images/admin_order_update.png" alt="Update Order" style="width:100%;"/></div> |
 
 
-## ══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+## ═════════════════════════════════════════════════════════
 
 
 ### 📚 [eCommerceMVC](https://github.com/asde9875/eCommerceMVC)  <a name="ecommercemvc"></a> 
