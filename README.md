@@ -4,6 +4,8 @@ Welcome to my GitHub! I'm a developer who enjoys building dynamic web applicatio
 
 Below are some of my featured projects that showcase both functionality and visual design.
 
+<img src="https://github.com/asde9875/asde9875/raw/main/logo_update.gif" width="300" />
+
 ---
 
 ## 📚 Project Index
