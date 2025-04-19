@@ -6,10 +6,22 @@ Below are some of my featured projects that showcase both functionality and visu
 
 ---
 
+## 📚 Project Index
+
+1. [Kevin_MVC](#kevin_mvc)
+2. [eCommerceMVC](#ecommercemvc)
+
+---
+
 ## 🚀 Featured Projects
 
-### 📚 [Kevin_MVC](https://github.com/asde9875/Kevin_MVC)  
+### 📚 [Kevin_MVC](https://github.com/asde9875/Kevin_MVC)  <a name="kevin_mvc"></a>
 A full‑stack ASP .NET Core MVC bookstore demo combining a playful front‑end with a robust admin console and complete shopping workflow. Key highlights include:
+
+<div style="max-width:300px; margin:1em auto;"><img src="https://raw.githubusercontent.com/asde9875/Kevin_MVC/master/images/home_admin_1.png" alt="Home (Guest)" style="width:100%;"/></div>
+
+
+### 🛠️ Key Functionalities
 
 🧑‍💼**User Experience**  
 > -  Dynamic starry background via Particles.js with custom GIF branding  
@@ -82,9 +94,6 @@ builder.Services.AddScoped<IApplicationUserService, ApplicationUserService>();
 // Other Services
 builder.Services.AddScoped<IEmailSender, EmailSender>();
 ```  
-
----
-
 ---
 
 ## 🎥 Demo Video
@@ -135,19 +144,206 @@ builder.Services.AddScoped<IEmailSender, EmailSender>();
 | <div style="max-width:300px; margin:1em auto;"><img src="https://raw.githubusercontent.com/asde9875/Kevin_MVC/master/images/admin_order_list.png" alt="Order List" style="width:100%;"/></div> | <div style="max-width:300px; margin:1em auto;"><img src="https://raw.githubusercontent.com/asde9875/Kevin_MVC/master/images/admin_order_update.png" alt="Update Order" style="width:100%;"/></div> |
 
 
+## ══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
 
 
----
-
-### 🛒 [eCommerceMVC](https://github.com/asde9875/eCommerceMVC)  
+### 📚 [eCommerceMVC](https://github.com/asde9875/eCommerceMVC)  <a name="ecommercemvc"></a> 
 A robust and production-style **ASP.NET MVC eCommerce website**, designed to handle real-world use cases like shopping, tracking, and category-based product browsing. Built with scalability in mind, this project covers the full shopping experience from category to checkout.
 
-> 🛠️ **Key Functionalities:**
+<div style="max-width:300px; margin:1em auto;"><img src="https://raw.githubusercontent.com/asde9875/eCommerceMVC/master/images/home_page_1.png" /></div>
+
+### 🛠️ Key Functionalities
+
 > - Mobile accessories store with multilingual support  
 > - Complete shopping cart and checkout system  
 > - Category filters (Headphones, Chargers, Stands, etc.)  
 > - Product grid layout with discount tags and slider UI  
 > - Clean, modern UI with backend-ready structure
+
+**Database & Identity**  
+> - Default: Microsoft SQL Server via Entity Framework Core  
+> - Easily swap to other providers (PostgreSQL, MySQL, Oracle, SQLite, IBM DB2)  
+> - Auto‑seeded roles & users (Administrator, Moderator, User) via `eCommerceDbInitializer`
+
+**Admin Dashboard**  
+> - Overview cards for Total Products, Categories, Orders, Comments, Users, and Roles  
+> - Sidebar navigation: Dashboard, Categories, Products, Promos, Orders, Comments, Users, Roles, Newsletter, Languages, Configurations  
+> - Real‑time role‑based data summary (Products, Users, Orders, etc.)
+
+**Category Management**  
+> - Hierarchical category structure with parent–child relationships  
+> - Search/filter by Parent Category, DataTables list with inline Edit/Delete  
+> - Admins can add/edit categories using modal or dedicated form
+
+**Product Management**  
+> - Searchable and paginated product table  
+> - Admin CRUD: add/edit product name, description (TinyMCE), price tiers, category, tags, and multiple product images  
+> - Stock quantity & low‑stock indicators supported
+
+**Order Management**  
+> - Filterable Orders list, each with a summary view  
+> - Real‑time order tracking, support for Stripe delayed payment  
+> - Admin actions: Process, Ship, Cancel, Refund
+
+**Localization & Language Switching**  
+> - UI for adding custom languages with short codes and icons  
+> - Fully switchable UI (e.g. English ↔ Mandarin)  
+> - Built-in support for RTL and locale expansion
+
+**Customer Experience**  
+> - Cart & Checkout process with address and contact form  
+> - Profile section with editable avatar, change password, comment history, and order list  
+> - Guest vs. Logged-in UI, multilingual switcher with flag dropdown
+
+
+---
+
+### 📂 Solution Structure  
+Below is the project folder organization for Kevin_MVC:  
+
+```
+eCommerceMVC/
+├── eCommerce.Data/                # Handles EF context and DB initialisation
+│   ├── Migrations/                # EF migrations folder
+│   ├── eCommerceContext.cs       # Main DB context
+│   └── eCommerceDBInitializer.cs # Seeds roles, admin users etc.
+│
+├── eCommerce.Entities/           # Defines all domain models (ORM-mapped)
+│   ├── BaseEntity.cs             # Base class for common entity properties
+│   ├── Product.cs, Category.cs   # Product-related models
+│   ├── Order.cs, OrderItem.cs    # Order and order item models
+│   ├── eCommerceUser.cs          # Extended Identity user model
+│   ├── Language.cs, LanguageResource.cs  # For localisation support
+│   ├── Promo.cs, PromoTypes.cs   # Promo and pricing types
+│   └── [Others...]               # Comments, Configurations, Newsletter, etc.
+│
+├── eCommerce.Services/           # Business logic layer (Service classes)
+│   ├── OrdersService.cs
+│   ├── ProductsService.cs
+│   ├── LanguagesService.cs
+│   ├── eCommerceUserManager.cs   # Custom identity manager
+│   └── [Others...]               # Role mgmt, email, dashboard service, etc.
+│
+├── eCommerce.Shared/             # Shared utilities & helpers
+│   ├── Attributes/               # Custom data annotations
+│   ├── Enums/                    # Enum definitions (OrderStatus, Roles etc.)
+│   ├── Extensions/, Helpers/     # Common helper methods
+│   └── Methods.cs
+│
+└── eCommerce.Web/                # MVC UI application
+    ├── Areas/                    # Separated areas (e.g., Admin area)
+    ├── Controllers/              # CartController, ProductController etc.
+    ├── ViewModels/               # Models passed to views
+    ├── Views/
+    │   ├── Cart/, Orders/, Users/
+    │   ├── Categories/, Comments/
+    │   └── Shared/               # _Layout.cshtml, partials
+    ├── App_Start/, Global.asax   # Routing, bundles, filters
+    ├── Content/                  # CSS, JS, icons
+    └── Web.config, Startup.cs    # Web app entry and DI config
+```    
+---
+
+### 🧩 Dependencies (NuGet)
+
+The following NuGet packages are included in this project (`packages.config` based - targeting .NET Framework 4.7.2 / 4.8):
+
+- **Entity Framework & Identity**
+  - `EntityFramework` `v6.4.4`
+  - `Microsoft.AspNet.Identity.Core` `v2.2.3`
+  - `Microsoft.AspNet.Identity.EntityFramework` `v2.2.3`
+  - `Microsoft.AspNet.Identity.Owin` `v2.2.3`
+
+- **ASP.NET MVC & Web API**
+  - `Microsoft.AspNet.Mvc` `v5.2.9`
+  - `Microsoft.AspNet.Razor` `v3.2.9`
+  - `Microsoft.AspNet.WebPages` `v3.2.9`
+  - `Microsoft.AspNet.WebApi.Core` `v5.2.9`
+  - `Microsoft.AspNet.WebApi.WebHost` `v5.2.9`
+  - `Microsoft.AspNet.WebApi.Owin` `v5.2.9`
+  - `Microsoft.AspNet.WebApi.Client` `v5.2.9`
+  - `Microsoft.AspNet.Web.Optimization` `v1.1.3`
+
+- **OWIN & External Auth**
+  - `Microsoft.Owin` `v4.2.2`
+  - `Microsoft.Owin.Host.SystemWeb` `v4.2.2`
+  - `Microsoft.Owin.Security.*` (Cookies, OAuth, Facebook, Google, Twitter, MicrosoftAccount) `v4.2.2`
+  - `Owin` `v1.0`
+
+- **Other Core Libraries**
+  - `Newtonsoft.Json` `v13.0.2`
+  - `System.Net.Http` `v4.3.4`
+  - `System.Memory` `v4.5.5`
+  - `System.Buffers` `v4.5.1`
+  - `System.Numerics.Vectors` `v4.5.0`
+  - `System.Text.Encoding.CodePages` `v7.0.0`
+  - `System.Runtime.CompilerServices.Unsafe` `v6.0.0`
+
+- **Security & Cryptography**
+  - `System.Security.Cryptography.Algorithms` `v4.3.1`
+  - `System.Security.Cryptography.Encoding` `v4.3.0`
+  - `System.Security.Cryptography.Primitives` `v4.3.0`
+  - `System.Security.Cryptography.X509Certificates` `v4.3.2`
+
+- **Image & Web Tools**
+  - `SixLabors.ImageSharp` `v2.1.3`
+  - `WebGrease` `v1.6.0`
+  - `Microsoft.Web.Infrastructure` `v2.0.0`
+
+- **Others**
+  - `AuthorizeNet` `v2.0.3` – for payment gateway integration
+  - `Antlr` `v3.5.0.2` – dependency for Razor or Web API parsing internals
+  - `Microsoft.CodeDom.Providers.DotNetCompilerPlatform` `v3.6.0` – C# compiler support for ASP.NET runtime
+
+---
+
+## 🎥 Demo Video  
+[▶️ Watch Demo Video](https://drive.google.com/file/d/1aSm9gJFtC6C02egUPmeI0udee4gc_nDT/view)
+
+---
+
+## 🖼️ Screenshots  
+> _All screenshots use absolute GitHub paths with consistent formatting_
+
+### 🏠 Home Page  
+| Banner View | Carousel + Category | Product Grid |
+|:-----------:|:-------------------:|:------------:|
+| <div style="max-width:300px; margin:1em auto;"><img src="https://raw.githubusercontent.com/asde9875/eCommerceMVC/master/images/home_page_1.png" /></div> | <div style="max-width:300px; margin:1em auto;"><img src="https://raw.githubusercontent.com/asde9875/eCommerceMVC/master/images/home_page_2.png" /></div> | <div style="max-width:300px; margin:1em auto;"><img src="https://raw.githubusercontent.com/asde9875/eCommerceMVC/master/images/home_page_3.png" /></div> |
+
+### 🛒 Product & Cart  
+| Product List | Product Detail | Add to Cart |
+|:------------:|:--------------:|:-----------:|
+| <div style="max-width:300px; margin:1em auto;"><img src="https://raw.githubusercontent.com/asde9875/eCommerceMVC/master/images/product_1.png" /></div> | <div style="max-width:300px; margin:1em auto;"><img src="https://raw.githubusercontent.com/asde9875/eCommerceMVC/master/images/product_details.png" /></div> | <div style="max-width:300px; margin:1em auto;"><img src="https://raw.githubusercontent.com/asde9875/eCommerceMVC/master/images/product_add_to_cart.png" /></div> |
+
+| Cart View | Checkout |
+|:---------:|:--------:|
+| <div style="max-width:300px; margin:1em auto;"><img src="https://raw.githubusercontent.com/asde9875/eCommerceMVC/master/images/cart_detail.png" /></div> | <div style="max-width:300px; margin:1em auto;"><img src="https://raw.githubusercontent.com/asde9875/eCommerceMVC/master/images/check_out.png" /></div> |
+
+### 👤 User Profile  
+| User Dashboard | Order History |
+|:--------------:|:-------------:|
+| <div style="max-width:300px; margin:1em auto;"><img src="https://raw.githubusercontent.com/asde9875/eCommerceMVC/master/images/user_profile.png" /></div> | <div style="max-width:300px; margin:1em auto;"><img src="https://raw.githubusercontent.com/asde9875/eCommerceMVC/master/images/customer_profile.png" /></div> |
+
+### 🧭 Language & Navigation  
+| Change Language | Language Success |
+|:---------------:|:----------------:|
+| <div style="max-width:300px; margin:1em auto;"><img src="https://raw.githubusercontent.com/asde9875/eCommerceMVC/master/images/home_page_change_bgcolor.png" /></div> | <div style="max-width:300px; margin:1em auto;"><img src="https://raw.githubusercontent.com/asde9875/eCommerceMVC/master/images/language_change_successful.png" /></div> |
+
+### 🗃️ Admin Dashboard  
+| Dashboard | Overview |
+|:---------:|:--------:|
+| <div style="max-width:300px; margin:1em auto;"><img src="https://raw.githubusercontent.com/asde9875/eCommerceMVC/master/images/admin_dashboard_1.png" /></div> | <div style="max-width:300px; margin:1em auto;"><img src="https://raw.githubusercontent.com/asde9875/eCommerceMVC/master/images/admin_dashboard_2.png" /></div> |
+
+### 📦 Order Management  
+| Order Tracking | Admin Order Control |
+|:--------------:|:-------------------:|
+| <div style="max-width:300px; margin:1em auto;"><img src="https://raw.githubusercontent.com/asde9875/eCommerceMVC/master/images/tracking.png" /></div> | <div style="max-width:300px; margin:1em auto;"><img src="https://raw.githubusercontent.com/asde9875/eCommerceMVC/master/images/admin_dashboard_4.png" /></div> |
+
+### 🌐 Others  
+| Fake About Us | Refund Policy | Register |
+|:-------------:|:-------------:|:--------:|
+| <div style="max-width:300px; margin:1em auto;"><img src="https://raw.githubusercontent.com/asde9875/eCommerceMVC/master/images/fake_about_us.png" /></div> | <div style="max-width:300px; margin:1em auto;"><img src="https://raw.githubusercontent.com/asde9875/eCommerceMVC/master/images/refund_policy_1.png" /></div> | <div style="max-width:300px; margin:1em auto;"><img src="https://raw.githubusercontent.com/asde9875/eCommerceMVC/master/images/register_account.png" /></div> |
+
 
 ---
 
