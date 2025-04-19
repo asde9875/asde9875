@@ -102,7 +102,7 @@ builder.Services.AddScoped<IEmailSender, EmailSender>();
 
 ---
 
-## 🎞️ Screenshots
+## Screenshots
 
 > _All screenshots are pulled directly from the `Kevin_MVC` repo via raw URLs_
 
@@ -144,7 +144,7 @@ builder.Services.AddScoped<IEmailSender, EmailSender>();
 | <div style="max-width:300px; margin:1em auto;"><img src="https://raw.githubusercontent.com/asde9875/Kevin_MVC/master/images/admin_order_list.png" alt="Order List" style="width:100%;"/></div> | <div style="max-width:300px; margin:1em auto;"><img src="https://raw.githubusercontent.com/asde9875/Kevin_MVC/master/images/admin_order_update.png" alt="Update Order" style="width:100%;"/></div> |
 
 
-## ═════════════════════════════════════════════════════════
+## ═════════════════════════════════════════════════════
 
 
 ### 📚 [eCommerceMVC](https://github.com/asde9875/eCommerceMVC)  <a name="ecommercemvc"></a> 
@@ -302,15 +302,15 @@ The following NuGet packages are included in this project (`packages.config` bas
 
 ---
 
-## 🖼️ Screenshots  
+## Screenshots  
 > _All screenshots use absolute GitHub paths with consistent formatting_
 
-### 🏠 Home Page  
+### Home Page  
 | Banner View | Carousel + Category | Product Grid |
 |:-----------:|:-------------------:|:------------:|
 | <div style="max-width:300px; margin:1em auto;"><img src="https://raw.githubusercontent.com/asde9875/eCommerceMVC/master/images/home_page_1.png" /></div> | <div style="max-width:300px; margin:1em auto;"><img src="https://raw.githubusercontent.com/asde9875/eCommerceMVC/master/images/home_page_2.png" /></div> | <div style="max-width:300px; margin:1em auto;"><img src="https://raw.githubusercontent.com/asde9875/eCommerceMVC/master/images/home_page_3.png" /></div> |
 
-### 🛒 Product & Cart  
+### Product & Cart  
 | Product List | Product Detail | Add to Cart |
 |:------------:|:--------------:|:-----------:|
 | <div style="max-width:300px; margin:1em auto;"><img src="https://raw.githubusercontent.com/asde9875/eCommerceMVC/master/images/product_1.png" /></div> | <div style="max-width:300px; margin:1em auto;"><img src="https://raw.githubusercontent.com/asde9875/eCommerceMVC/master/images/product_details.png" /></div> | <div style="max-width:300px; margin:1em auto;"><img src="https://raw.githubusercontent.com/asde9875/eCommerceMVC/master/images/product_add_to_cart.png" /></div> |
@@ -319,27 +319,27 @@ The following NuGet packages are included in this project (`packages.config` bas
 |:---------:|:--------:|
 | <div style="max-width:300px; margin:1em auto;"><img src="https://raw.githubusercontent.com/asde9875/eCommerceMVC/master/images/cart_detail.png" /></div> | <div style="max-width:300px; margin:1em auto;"><img src="https://raw.githubusercontent.com/asde9875/eCommerceMVC/master/images/check_out.png" /></div> |
 
-### 👤 User Profile  
+### User Profile  
 | User Dashboard | Order History |
 |:--------------:|:-------------:|
 | <div style="max-width:300px; margin:1em auto;"><img src="https://raw.githubusercontent.com/asde9875/eCommerceMVC/master/images/user_profile.png" /></div> | <div style="max-width:300px; margin:1em auto;"><img src="https://raw.githubusercontent.com/asde9875/eCommerceMVC/master/images/customer_profile.png" /></div> |
 
-### 🧭 Language & Navigation  
-| Change Language | Language Success |
+### Language & Navigation  
+| Change Language | Set Language Successfully |
 |:---------------:|:----------------:|
 | <div style="max-width:300px; margin:1em auto;"><img src="https://raw.githubusercontent.com/asde9875/eCommerceMVC/master/images/home_page_change_bgcolor.png" /></div> | <div style="max-width:300px; margin:1em auto;"><img src="https://raw.githubusercontent.com/asde9875/eCommerceMVC/master/images/language_change_successful.png" /></div> |
 
-### 🗃️ Admin Dashboard  
+### Admin Dashboard  
 | Dashboard | Overview |
 |:---------:|:--------:|
 | <div style="max-width:300px; margin:1em auto;"><img src="https://raw.githubusercontent.com/asde9875/eCommerceMVC/master/images/admin_dashboard_1.png" /></div> | <div style="max-width:300px; margin:1em auto;"><img src="https://raw.githubusercontent.com/asde9875/eCommerceMVC/master/images/admin_dashboard_2.png" /></div> |
 
-### 📦 Order Management  
+### Order Management  
 | Order Tracking | Admin Order Control |
 |:--------------:|:-------------------:|
 | <div style="max-width:300px; margin:1em auto;"><img src="https://raw.githubusercontent.com/asde9875/eCommerceMVC/master/images/tracking.png" /></div> | <div style="max-width:300px; margin:1em auto;"><img src="https://raw.githubusercontent.com/asde9875/eCommerceMVC/master/images/admin_dashboard_4.png" /></div> |
 
-### 🌐 Others  
+### Others  
 | Fake About Us | Refund Policy | Register |
 |:-------------:|:-------------:|:--------:|
 | <div style="max-width:300px; margin:1em auto;"><img src="https://raw.githubusercontent.com/asde9875/eCommerceMVC/master/images/fake_about_us.png" /></div> | <div style="max-width:300px; margin:1em auto;"><img src="https://raw.githubusercontent.com/asde9875/eCommerceMVC/master/images/refund_policy_1.png" /></div> | <div style="max-width:300px; margin:1em auto;"><img src="https://raw.githubusercontent.com/asde9875/eCommerceMVC/master/images/register_account.png" /></div> |
