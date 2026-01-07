@@ -1,6 +1,6 @@
 ## 👋 Hi there, I'm Kevin  
 
-Welcome to my GitHub! I'm a developer who enjoys building dynamic web applications using the ASP.NET MVC framework. 
+Welcome to my GitHub!
 
 Below are some of my featured projects that showcase both functionality and visual design.
 
